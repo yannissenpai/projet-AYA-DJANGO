@@ -3,72 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connexion</title>
+    <title>STI2D2</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        form {
-            background-color: #fff;
+            margin: 20px;
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
         }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        input {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 16px;
-            box-sizing: border-box;
-        }
-
-        button {
-            background-color: #4caf50;
-            color: #fff;
-            padding: 10px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        /* Ajout de styles pour le lien */
-        a {
-            display: block;
+        header {
             text-align: center;
-            margin-top: 10px;
-            text-decoration: none;
-            color: #333;
+            background-color: #f0f0f0;
+            padding: 10px;
+        }
+        section {
+            margin-top: 20px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f0f0f0;
         }
     </style>
 </head>
 <body>
 
-    <form>
-        <label for="username">Nom d'utilisateur:</label>
-        <input type="text" id="username" name="username" required>
+    <header>
+        <h1>Note de la classe STI2D2</h1>
+    </header>
 
-        <label for="password">Mot de passe:</label>
-        <input type="password" id="password" name="password" required>
+    <section>
+        <h2>Note</h2>
+        <p>Voici les notes de la classe STI2D2.</p>
+    </section>
 
-        <button type="submit">Se connecter</button>
 
-        <!-- Bouton pour les administrateurs -->
-        <a href="http://127.0.0.1:8000/admin/">Accéder à l'interface administrateur</a>
-    </form>
+    <section style="text-align: center;">
+
+    <!-- Tableau 5x2 -->
+    <table border="1" style="margin: auto;">
+        <tr>
+            <td>Colonne 1, Ligne 1</td>
+            <td>Colonne 2, Ligne 1</td>
+            <td>Colonne 3, Ligne 1</td>
+            <td>Colonne 4, Ligne 1</td>
+            <td>Colonne 5, Ligne 1</td>
+        </tr>
+        <tr>
+            <td>Colonne 1, Ligne 2</td>
+            <td>Colonne 2, Ligne 2</td>
+            <td>Colonne 3, Ligne 2</td>
+            <td>Colonne 4, Ligne 2</td>
+            <td>Colonne 5, Ligne 2</td>
+        </tr>
+    </table>
+</section>
+
+
+    <footer>
+        <p>Ce pied de page contient des informations supplémentaires.</p>
+    </footer>
 
 </body>
 </html>
