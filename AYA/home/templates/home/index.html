@@ -1,68 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STI2D2</title>
+    <title>Liste des Étudiants</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #ffc0cb; /* Couleur rose */
+        }
+
+        #rectangle {
+            background-color: white;
             padding: 20px;
-        }
-        header {
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             text-align: center;
-            background-color: #f0f0f0;
-            padding: 10px;
         }
-        section {
-            margin-top: 20px;
+
+        #ajouterButton {
+            background-color: #4CAF50; /* Couleur verte */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
         }
-        footer {
-            text-align: center;
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #f0f0f0;
+
+        #ajouterButton:hover {
+            background-color: #45a049; /* Couleur verte plus foncée au survol */
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Note de la classe STI2D2</h1>
-    </header>
+    <div id="rectangle">
+        <h2>Liste des Étudiants</h2>
+        <h3>{{ nom }}</h3>
+         <h3>{{ numero }}</h3>
+        
+            <section>
+                {% block content %}
+                
 
-    <section>
-        <h2>Note</h2>
-        <p>Voici les notes de la classe STI2D2.</p>
-    </section>
+                {% endblock %}
+            </section>
+                
+            
+        
+        <button id="ajouterButton" onclick="ajouterEtudiant()">Ajouter</button>
+    </div>
 
-
-    <section style="text-align: center;">
-
-    <!-- Tableau 5x2 -->
-    <table border="1" style="margin: auto;">
-        <tr>
-            <td>Colonne 1, Ligne 1</td>
-            <td>Colonne 2, Ligne 1</td>
-            <td>Colonne 3, Ligne 1</td>
-            <td>Colonne 4, Ligne 1</td>
-            <td>Colonne 5, Ligne 1</td>
-        </tr>
-        <tr>
-            <td>Colonne 1, Ligne 2</td>
-            <td>Colonne 2, Ligne 2</td>
-            <td>Colonne 3, Ligne 2</td>
-            <td>Colonne 4, Ligne 2</td>
-            <td>Colonne 5, Ligne 2</td>
-        </tr>
-    </table>
-</section>
-
-
-    <footer>
-        <p>Ce pied de page contient des informations supplémentaires.</p>
-    </footer>
-
+    <script>
+        function ajouterEtudiant() {
+            var nouveauEtudiant = prompt("Entrez le nom du nouvel étudiant :");
+            if (nouveauEtudiant) {
+                var listeEtudiants = document.querySelector("ul");
+                var nouvelElement = document.createElement("li");
+                nouvelElement.textContent = nouveauEtudiant;
+                listeEtudiants.appendChild(nouvelElement);
+            }
+        }
+    </script>
 </body>
 </html>
