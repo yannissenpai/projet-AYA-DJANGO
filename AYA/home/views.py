@@ -1,15 +1,14 @@
 from django.shortcuts import render
 from .models import grade
 
-def home(request, *args, **kwargs):
-    grades = grade.objects.all()
-    contexte = {
-    'name':grade.student
+def test(request, *args, **kwargs):
+	Grade = grade.objects.get(id=1)
+    context = {
+    'name':grade.name
+    'student':grade.student
+
     }
-   
-
-
-    return render(request, 'home/index.html', )
+    return render(request, 'home/index.html', context )
 
 
 

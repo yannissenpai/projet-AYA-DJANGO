@@ -40,7 +40,9 @@
 
     <div id="rectangle">
         <h2>Liste des Étudiants</h2>
-        <ul>
+        <h3>{{ nom }}</h3>
+         <h3>{{ numero }}</h3>
+        
             <section>
                 {% block content %}
                 
@@ -49,7 +51,7 @@
             </section>
                 
             
-        </ul>
+        
         <button id="ajouterButton" onclick="ajouterEtudiant()">Ajouter</button>
     </div>
 
