@@ -1,14 +1,12 @@
 from django.shortcuts import render
-from .models import grade
+from .models import student
 
 def test(request, *args, **kwargs):
-	Grade = grade.objects.get(id=1)
+    students = student.objects.all()
     context = {
-    'name':grade.name
-    'student':grade.student
-
+    'students': students,
     }
-    return render(request, 'home/index.html', context )
+    return render(request, 'home/detail.html', context)
 
 
 

@@ -16,14 +16,22 @@
 
         #rectangle {
             background-color: white;
-            padding: 20px;
-            border-radius: 10px;
+            padding: 40px;
+            border-radius: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
 
+        #carre {
+            background-color: gray;
+            padding: 70px;
+            border-radius: 20px;
+            box-shadow: 0 0 0px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
         #ajouterButton {
-            background-color: #4CAF50; /* Couleur verte */
+            background-color: darkgray; /* Couleur verte */
             color: white;
             padding: 10px 20px;
             border: none;
@@ -32,7 +40,30 @@
         }
 
         #ajouterButton:hover {
-            background-color: #45a049; /* Couleur verte plus foncée au survol */
+            background-color: gray; /* Couleur verte plus foncée au survol */
+        }
+
+        #delButton {
+            background-color: darkred; /* Couleur verte */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #delButton:hover {
+            background-color: red; /* Couleur verte plus foncée au survol */
+        }
+
+        li {
+            background-color: #fff;
+            
+            margin: 10px;
+           
+            
+             /* Calcul de la largeur pour 5 éléments par ligne avec marges */
+            
         }
     </style>
 </head>
@@ -40,19 +71,19 @@
 
     <div id="rectangle">
         <h2>Liste des Étudiants</h2>
-        <h3>{{ nom }}</h3>
-         <h3>{{ numero }}</h3>
-        
-            <section>
-                {% block content %}
+       
+            
+                
+            {% block content %}
                 
 
-                {% endblock %}
-            </section>
+            {% endblock %}
+           
                 
             
         
         <button id="ajouterButton" onclick="ajouterEtudiant()">Ajouter</button>
+        <button id="delButton" onclick="ajouterEtudiant()">Delete</button>
     </div>
 
     <script>
