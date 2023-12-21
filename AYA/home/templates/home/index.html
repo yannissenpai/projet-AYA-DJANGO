@@ -44,7 +44,7 @@
         }
 
         #delButton {
-            background-color: darkred; /* Couleur verte */
+            background-color: darkgray; /* Couleur verte */
             color: white;
             padding: 10px 20px;
             border: none;
@@ -53,7 +53,7 @@
         }
 
         #delButton:hover {
-            background-color: red; /* Couleur verte plus foncée au survol */
+            background-color: gray; /* Couleur verte plus foncée au survol */
         }
 
         li {
@@ -83,11 +83,20 @@
             
         
         <button id="ajouterButton" onclick="ajouterEtudiant()">Ajouter</button>
-        <button id="delButton" onclick="ajouterEtudiant()">Delete</button>
+        <button id="delButton" onclick="delEtudiant()">Delete</button>
     </div>
 
     <script>
         function ajouterEtudiant() {
+            var nouveauEtudiant = prompt("Entrez le nom du nouvel étudiant :");
+            if (nouveauEtudiant) {
+                var listeEtudiants = document.querySelector("ul");
+                var nouvelElement = document.createElement("li");
+                nouvelElement.textContent = nouveauEtudiant;
+                listeEtudiants.appendChild(nouvelElement);
+            }
+        }
+        function delEtudiant() {
             var nouveauEtudiant = prompt("Entrez le nom du nouvel étudiant :");
             if (nouveauEtudiant) {
                 var listeEtudiants = document.querySelector("ul");
