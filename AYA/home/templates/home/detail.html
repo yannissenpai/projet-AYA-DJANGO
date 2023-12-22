@@ -1,19 +1,39 @@
 {% extends 'home/index.html' %}
 
 {% block content %}
- 
 
 
-        {% for student_instance in students %}
-        
-           <p>{{ student_instance.name }} {{ student_instance.first_name }}</p>
+    {% for student_instance in students %}
+        <ul>{{ student_instance.name }} {{ student_instance.first_name }}</ul>
+    {% endfor %}
 
+    <a id="ajouterButton" href="/create-student" class="button">AJOUTER</a>
+    <a id="delButton" href="/delete-student" class="button">DELETE</a>
 
-           
-        {% endfor %}
-  
-  
- 
-   
+        <p></p>
 
+    {% if grades %}
+        <h3>Notes de l'étudiant {{ student_instance.name }} {{ student_instance.first_name }}</h3>
+        <table border="1" >
+            <tr>
+                <th>Matière</th>
+                <th>Note</th>
+                <th>Date</th>
+            </tr>
+            {% for g in grades %}
+                <tr>
+                    <td>{{ g.name.name }}</td>
+                    <td>{{ g.grade }}</td>
+                    <td>{{ g.date }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        <p></p>
+        <p></p>
+    {% else %}
+        {% if message %}
+            <p>{{ message }}</p>
+        {% endif %}
+    {% endif %}
 {% endblock %}
+

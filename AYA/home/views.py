@@ -7,8 +7,9 @@ from .models import student, grade, subject
 from django.shortcuts import render, redirect
 from multiprocessing import context
 from .form import CreatStudent
-from reportlab.pdfgen import canvas
 from django.contrib import messages
+
+
 
 """ Page d'accueil """
 def test(request, *args, **kwargs):
@@ -16,6 +17,16 @@ def test(request, *args, **kwargs):
     context = {
     'students': students,
     }
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        try:
+            student_instance = student.objects.get(name=name)
+            grades = grade.objects.filter(student=student_instance)
+            context['student_instance'] = student_instance
+            context['grades'] = grades
+        except student.DoesNotExist:
+            message = "Utilisateur introuvable"
+            context['message'] = message
     return render(request, 'home/detail.html', context)
 
 
@@ -82,8 +93,8 @@ def gpdf(request):
     return render(request, 'home/gpdf.html', {'message': message})
 
 
-""" Création et Suppression """
 
+""" Création student"""
 def create_student(request):
     form = CreatStudent(request.POST or None)
     message = ' '
@@ -95,8 +106,9 @@ def create_student(request):
 
     return render(request, 'home/detailcreateS.html', {'form':form, 'message':message,})
 
-# Supprimer un utilisateur
 
+
+""" Suppression student"""
 def delete_user(request):
     if request.method == 'POST':
         student_name = request.POST.get('name')
@@ -111,8 +123,3 @@ def delete_user(request):
         return redirect('supprimer-utilisateur')  # Assurez-vous que c'est la bonne URL de redirection
 
     return render(request, 'home/deleteS.html')
-
-"""
-def index(request):
-    return render(request, 'home/index.html')
-    """

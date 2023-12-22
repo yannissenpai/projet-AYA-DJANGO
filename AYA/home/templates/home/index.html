@@ -1,8 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Liste des Étudiants</title>
     <style>
         body {
@@ -72,8 +74,7 @@
     <div id="rectangle">
         <h2>Liste des Étudiants</h2>
        
-            
-                
+                        
             {% block content %}
                 
 
@@ -81,10 +82,15 @@
            
                 
             
-        <a id="ajouterButton" href="/create-student" class="button">Ajouter un utilisateur</a>
-        <a id="delButton" href="/supprimer-utilisateur" class="button">Supprimer un utilisateur</a>
-        <a id="genButton" href="/gpdf" class="button">Generer </a>
+       
 
+        <form action="" method="post">
+            {% csrf_token %}
+            <label for="name"> Renter le nom de l'étudiant :</label>
+            <input type="text" id="name" name="name">
+            <br><br>
+            <button type="submit">Générer</button>
+        </form>
         
     </div>
 

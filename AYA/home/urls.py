@@ -5,8 +5,7 @@ urlpatterns =  [
     path('', views.index, name='index'),
     path('gpdf/', views.index, name='gpdf'),
     path('create-student/', views.index, name='createS'),
-    path('supprimer-utilisateur/',  views.index, name='supprimer-utilisateur'),
-
+    path('supprimer-utilisateur/', views.index, name='supprimer-utilisateur'),
 
 
 ]
