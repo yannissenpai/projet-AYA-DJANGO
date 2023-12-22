@@ -1,0 +1,19 @@
+{% extends 'home/index.html' %}
+
+{% block content %}
+ 
+
+
+        {% for student_instance in students %}
+        
+           <p>{{ student_instance.name }} {{ student_instance.first_name }}</p>
+
+
+           
+        {% endfor %}
+  
+  
+ 
+   
+
+{% endblock %}
