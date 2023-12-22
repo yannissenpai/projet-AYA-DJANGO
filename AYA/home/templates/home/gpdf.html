@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -56,4 +57,64 @@
         {% endif %}
     </div>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générer PDF</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #ffc0cb; /* Couleur rose */
+        }
+
+        #rectangle {
+            background-color: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        #carre {
+            background-color: gray;
+            padding: 70px;
+            border-radius: 20px;
+            box-shadow: 0 0 0px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        li {
+            background-color: #fff;
+            
+            margin: 10px;
+           
+            
+             /* Calcul de la largeur pour 5 éléments par ligne avec marges */
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="rectangle">
+        <h2>Générer pdf </h2>
+        <form action="" method="post">
+            {% csrf_token %}
+            <label for="name"> Taper votre nom de famille :</label>
+            <input type="text" id="name" name="name">
+            <br><br>
+            <button type="submit">Générer</button>
+        </form>
+        {% if message %}
+            <p>{{ message }}</p>
+        {% endif %}
+    </div>
+</body>
+>>>>>>> 2eb0a6f85afe7837930abea1490ce27622e116e2
 </html>
