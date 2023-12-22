@@ -81,30 +81,12 @@
            
                 
             
+        <a id="ajouterButton" href="/create-student" class="button">Ajouter un utilisateur</a>
+        <a id="delButton" href="/supprimer-utilisateur" class="button">Supprimer un utilisateur</a>
+        <a id="genButton" href="/gpdf" class="button">Generer </a>
+
         
-        <button id="ajouterButton" onclick="ajouterEtudiant()">Ajouter</button>
-        <button id="delButton" onclick="delEtudiant()">Delete</button>
     </div>
 
-    <script>
-        function ajouterEtudiant() {
-            var nouveauEtudiant = prompt("Entrez le nom du nouvel étudiant :");
-            if (nouveauEtudiant) {
-                var listeEtudiants = document.querySelector("ul");
-                var nouvelElement = document.createElement("li");
-                nouvelElement.textContent = nouveauEtudiant;
-                listeEtudiants.appendChild(nouvelElement);
-            }
-        }
-        function delEtudiant() {
-            var nouveauEtudiant = prompt("Entrez le nom du nouvel étudiant :");
-            if (nouveauEtudiant) {
-                var listeEtudiants = document.querySelector("ul");
-                var nouvelElement = document.createElement("li");
-                nouvelElement.textContent = nouveauEtudiant;
-                listeEtudiants.appendChild(nouvelElement);
-            }
-        }
-    </script>
 </body>
 </html>
