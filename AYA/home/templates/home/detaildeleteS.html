@@ -1,4 +1,4 @@
-{% extends 'home/createS.html' %}
+{% extends 'home/deleteS.html' %}
 
 {% block content %}
  
@@ -7,7 +7,6 @@
    {% csrf_token %}
    {{ form.as_p }}
    <button type="submit"> create</button>
-   
 
 </form>
 

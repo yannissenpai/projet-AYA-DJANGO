@@ -30,32 +30,6 @@
             text-align: left;
         }
 
-        #ajouterButton {
-            background-color: darkgray; /* Couleur verte */
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        #ajouterButton:hover {
-            background-color: gray; /* Couleur verte plus foncée au survol */
-        }
-
-        #delButton {
-            background-color: darkgray; /* Couleur verte */
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        #delButton:hover {
-            background-color: gray; /* Couleur verte plus foncée au survol */
-        }
-
         li {
             background-color: #fff;
             
@@ -65,26 +39,35 @@
              /* Calcul de la largeur pour 5 éléments par ligne avec marges */
             
         }
+         #ajouterButton {
+            background-color: darkgray; /* Couleur verte */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
     </style>
 </head>
 <body>
-
+    
+    
     <div id="rectangle">
-        <h2>Liste des Étudiants</h2>
-       
-            
-                
-            {% block content %}
+        <h2>Delete a Student</h2>
+
+        <h2>Confirmez la suppression de l'étudiant "{{ student.name }}" ?</h2>
+
+        {% block content %}
                 
 
-            {% endblock %}
+        {% endblock %}
+       
+        
            
+         
                 
             
-        <a id="ajouterButton" href="/create-student" class="button">AJOUTER</a>
-        <a id="delButton" href="/delete-student" class="button">DELETE</a>
+        
         
     </div>
-
 </body>
 </html>

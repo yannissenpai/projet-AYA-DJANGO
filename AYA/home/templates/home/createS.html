@@ -39,18 +39,29 @@
              /* Calcul de la largeur pour 5 éléments par ligne avec marges */
             
         }
+
+        #ajouterButton {
+            background-color: darkgray; /* Couleur verte */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
-    {% block content %}
-                
-
-    {% endblock %}
+    
     
     <div id="rectangle">
         <h2>Student Creation</h2>
-       
-            
+
+        {% block content %}
+                
+
+        {% endblock %}
+        <h2></h2>
+            <a id="ajouterButton" href="/" class="button">RETURN</a>
            
          
                 
