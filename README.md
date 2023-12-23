@@ -1,5 +1,5 @@
 # Bonjour
-Voici notre projet AJA sur django fait par Yannis Bondonga, Ahmed Souai et Abel Sansouci
+Voici notre projet AYA sur django fait par Yannis Bondonga, Ahmed Souai et Abel Sansouci
 
 # Lancement
 **Pour lancer le projet veuiller avoir ceci installer en local** :
