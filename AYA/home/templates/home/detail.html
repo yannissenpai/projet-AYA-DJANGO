@@ -7,17 +7,18 @@
         <ul>{{ student_instance.name }} {{ student_instance.first_name }}</ul>
     {% endfor %}
 
-    <a id="ajouterButton" href="/create-student" class="button">AJOUTER</a>
+    <a id="ajouterButton" href="/create-student" class="button">ADD</a>
     <a id="delButton" href="/delete-student" class="button">DELETE</a>
 
         <p></p>
+    <h2>View Student grades</h2>    
 
     {% if grades %}
-        <h3>Notes de l'étudiant {{ student_instance.name }} {{ student_instance.first_name }}</h3>
+        <h3>Student grades {{ student_instance.name }} {{ student_instance.first_name }}</h3>
         <table border="1" >
             <tr>
-                <th>Matière</th>
-                <th>Note</th>
+                <th>Subject</th>
+                <th>Grade</th>
                 <th>Date</th>
             </tr>
             {% for g in grades %}

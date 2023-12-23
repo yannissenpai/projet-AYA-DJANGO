@@ -6,7 +6,7 @@ from django.http import HttpResponse
 from .models import student, grade, subject
 from django.shortcuts import render, redirect
 from multiprocessing import context
-from .form import CreatStudent
+from .form import CreatStudent, CreatGrade
 from django.contrib import messages
 
 
@@ -88,7 +88,7 @@ def gpdf(request):
             doc.build(elements)
             return response
         except student.DoesNotExist:
-            message = "Élève introuvable"
+            message = "Student not found"
 
     return render(request, 'home/gpdf.html', {'message': message})
 
@@ -117,9 +117,41 @@ def delete_user(request):
             # Il n'est pas nécessaire de filtrer les instances de student si vous supprimez un seul étudiant
             grade.objects.filter(student=user).delete()  # Supprime les grades de l'étudiant
             user.delete()
-            messages.success(request, 'Utilisateur et ses grades associés supprimés avec succès.')
+            messages.success(request, 'The student has been deleted.')
         except student.DoesNotExist:
-            messages.error(request, 'Utilisateur introuvable.')
+            messages.error(request, 'Student not found.')
         return redirect('supprimer-utilisateur')  # Assurez-vous que c'est la bonne URL de redirection
 
     return render(request, 'home/deleteS.html')
+
+
+
+""" Création grade"""
+def create_grade(request):
+    form = CreatGrade(request.POST or None)
+    message = ' '
+    if form.is_valid():
+        form.save()
+        form = CreatGrade()
+        message = '+1 Grade added'
+
+
+    return render(request, 'home/detailcreateG.html', {'form':form, 'message':message,})
+
+
+
+""" Suppression student"""
+def delete_grade(request):
+    if request.method == 'POST':
+        student_name = request.POST.get('name')
+        try:
+            user = student.objects.get(name=student_name)
+            # Il n'est pas nécessaire de filtrer les instances de student si vous supprimez un seul étudiant
+            grade.objects.filter(student=user).delete()  # Supprime les grades de l'étudiant
+            user.delete()
+            messages.success(request, 'The grade has been deleted.')
+        except student.DoesNotExist:
+            messages.error(request, 'Grade not found.')
+        return redirect('supprimer-utilisateur')  # Assurez-vous que c'est la bonne URL de redirection
+
+    return render(request, 'home/deleteG.html')

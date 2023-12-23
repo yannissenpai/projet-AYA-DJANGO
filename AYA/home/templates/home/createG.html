@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Générer PDF</title>
+    <title>Liste des Étudiants</title>
     <style>
         body {
             margin: 0;
@@ -39,20 +39,35 @@
              /* Calcul de la largeur pour 5 éléments par ligne avec marges */
             
         }
+
+        #ajouterButton {
+            background-color: darkgray; /* Couleur verte */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
+    
+    
     <div id="rectangle">
-        <h2>Générer pdf </h2>
-        <form action="" method="post">
-            {% csrf_token %}
-            <label for="name"> Tape the last name :</label>
-            <input type="text" id="name" name="name">
-            <br><br>
-            <button type="submit">Générer</button>
-        </form>
-        {% if message %}
-            <p>{{ message }}</p>
-        {% endif %}
+        <h2>Student Creation</h2>
+
+        {% block content %}
+                
+
+        {% endblock %}
+        <h2></h2>
+            <a id="ajouterButton" href="/" class="button">RETURN</a>
+           
+         
+                
+            
+        
+        
     </div>
 </body>
+</html>

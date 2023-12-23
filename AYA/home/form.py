@@ -1,5 +1,5 @@
 from django import forms
-from .models import student
+from .models import student, grade
 
 class CreatStudent(forms.ModelForm):
 	class Meta:
@@ -9,3 +9,13 @@ class CreatStudent(forms.ModelForm):
 
 class DeletStudent(forms.Form):
 	student_code = forms.IntegerField(widget=forms.HiddenInput())
+
+
+class CreatGrade(forms.ModelForm):
+	class Meta:
+	   model= grade
+	   fields = ('name', 'student', 'grade', 'date')
+
+
+class DeletStudent(forms.Form):
+	garde_code = forms.IntegerField(widget=forms.HiddenInput())

@@ -1,0 +1,18 @@
+{% extends 'home/createG.html' %}
+
+{% block content %}
+ 
+<h3>{{ message }}</h3>
+<form method="post">
+   {% csrf_token %}
+   {{ form.as_p }}
+   <button type="submit"> add</button>
+   
+
+</form>
+
+  
+ 
+   
+
+{% endblock %}

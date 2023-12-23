@@ -20,7 +20,7 @@ class grade(models.Model):
 	name = models.ForeignKey(subject, on_delete=models.CASCADE)
 	student = models.ForeignKey(student, on_delete=models.CASCADE)
 	grade = models.DecimalField(max_digits=3, decimal_places=1)
-	date = models.DateField(auto_now=True)
+	date = models.DateField()
 
 	
 
