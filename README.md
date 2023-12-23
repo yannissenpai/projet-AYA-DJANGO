@@ -2,7 +2,7 @@
 Voici notre projet AJA sur django fait par Yannis Bondonga, Ahmed Souai et Abel Sansouci
 
 # Lancement
-**pour lancer le projet veuiller avoir ceci installer en local** :
+**Pour lancer le projet veuiller avoir ceci installer en local** :
 - Avoir une version de python pas trop obselète
 - Installer Django avec la commande : pip install django
 - Insatller reportelab avec loa commande  : pip install reportlab (ce module nous permettra de générer des pdf.)
