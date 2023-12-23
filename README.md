@@ -27,3 +27,8 @@ Une adresse vous seras afficher rentrer la dans votre navigateur, vous aller avo
 
 Pour ma part (Yannis Bondonga) j'ai apprécier effectuer ce projet meme si nous ne l'avions pas vu avec vous. J'ai effectuer mes recherches sur youtube avec la chaine de Donald Programmeur et pour debug chatgpt.
 
+Je pense utiliser Django pour mon projet de fin d'année merci pour l'idée.
+
+
+Bonne continuation :)
+
