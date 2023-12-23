@@ -12,6 +12,6 @@ Après avoir tous les prérequis sur votre systèmes veuiller git clone ce proje
 cd votre_chemin\projet-AYA-DJANGO\AYA
 
 
-maintenant lancer le projet en rentrant la commande : python manage.py runserver
+Maintenant lancer le projet en rentrant la commande : python manage.py runserver
 
-une adresse vous seras afficher rentrer la dans votre navigateur, vous aller avoir accès a la page web de notre site pour les étudiant 
+Une adresse vous seras afficher rentrer la dans votre navigateur, vous aller avoir accès a la page web de notre site pour les étudiant 
