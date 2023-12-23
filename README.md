@@ -7,7 +7,7 @@ Voici notre projet AJA sur django fait par Yannis Bondonga, Ahmed Souai et Abel 
 - Installer Django avec la commande : pip install django
 - Insatller reportelab avec loa commande  : pip install reportlab (ce module nous permettra de générer des pdf.)
 
-Après avoir tous les prérequis sur votre systèmes veuiller git clone ce projet dans le lieu de votre choix, ensuite ouvrer un cmd et faite le chemin : 
+Après avoir tous les prérequis sur votre systèmes veuiller git clone ce projet dans le lieu de votre choix, ensuite ouvrer un cmd et faite le chemin: 
 
 cd votre_chemin\projet-AYA-DJANGO\AYA
 
